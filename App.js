@@ -15,7 +15,7 @@ import PainPoints from './src/components/PainPoints'
 export default class App extends Component<{}> {
   render() {
     return (
-      <PainPoints />
+      <HowIFeel />
     );
   }
 }

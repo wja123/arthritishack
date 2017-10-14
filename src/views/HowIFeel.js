@@ -50,10 +50,10 @@ export default class HowIFeel extends Component {
   saveRatings(){
     AsyncStorage.getItem('questions', (err, quest) => {
       let questionsObj = {};
-      let tempObj = JSON.parse(quest).questions;
+      console.warn(quest)
+      let tempObj = quest? JSON.parse(quest) : [];
       questionsObj.questions = this.state.questions.slice();
       questionsObj.time = Date.now();
-      console.warn(JSON.stringify(questionsObj));
       tempObj.push(questionsObj);
       AsyncStorage.setItem('questions', JSON.stringify(tempObj));
     })
