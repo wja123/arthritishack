@@ -8,7 +8,8 @@ export default class Stories extends Component {
     super(props);
 
     this.state = {
-      data: [{ id: 1, title: 'Symptoms', image:'https://raw.githubusercontent.com/wja123/arthritishack/258b1bb61442acf983b4dc0de8d7beacfe61fa3a/src/assets/1%20thumbnail%20symptoms.jpg'}, { id: 2, title: 'Medicines', image:'https://raw.githubusercontent.com/wja123/arthritishack/258b1bb61442acf983b4dc0de8d7beacfe61fa3a/src/assets/2%20thumbnail%20medicines.jpg'}, { id: 3, title: 'Play', image:'https://raw.githubusercontent.com/wja123/arthritishack/258b1bb61442acf983b4dc0de8d7beacfe61fa3a/src/assets/3%20thumbnail%20ridiing%20bike.jpg'}],
+      data: [{ id: 1, title: 'Symptoms', image1:'https://github.com/wja123/arthritishack/blob/stories/src/assets/1_gif.gif?raw=true', image2: 'https://github.com/wja123/arthritishack/blob/stories/src/assets/speechbubble1.gif?raw=true'}, { id: 2, title: 'Medicines', image1:'https://github.com/wja123/arthritishack/blob/stories/src/assets/speechbubble2.gif?raw=true', image2:
+      'https://github.com/wja123/arthritishack/blob/stories/src/assets/2_gif.gif?raw=true'}, { id: 3, title: 'Play', image1: 'https://github.com/wja123/arthritishack/blob/stories/src/assets/3_gif.gif?raw=true', image2: 'https://github.com/wja123/arthritishack/blob/stories/src/assets/speechbubble3.gif?raw=true'}, { id: 4, title: 'Bath', image1:'https://github.com/wja123/arthritishack/blob/stories/src/assets/speechbubble4.gif?raw=true', image2: 'https://github.com/wja123/arthritishack/blob/stories/src/assets/4_gif.gif?raw=true'}],
       page: 1,
       seed: 1,
       error: null,
@@ -38,15 +39,12 @@ export default class Stories extends Component {
         <FlatList
           data={this.state.data}
           renderItem={({ item }) => (
-            <View>
-            <View>
-              <Image source={{uri: item.image}} style={{width: 200, height: 200, resizeMode: Image.resizeMode.contain}}>
+            <View style={{flexDirection: "row", justifyContent: 'center', paddingTop: 30, paddingBottom: 30}}>
+              <Image source={{uri: item.image1}} style={{width: 150, height: 150, resizeMode: Image.resizeMode.contain}}>
+              </Image>
+              <Image source={{uri: item.image2}} style={{width: 150, height: 150, resizeMode: Image.resizeMode.contain}}>
               </Image>
               </View>
-              <View>
-              <Text>{item.title}</Text>
-              </View>
-            </View>
           )}
           ItemSeparatorComponent={this.renderSeparator}
           keyExtractor={item => item.title}
