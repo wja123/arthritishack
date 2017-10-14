@@ -7,7 +7,6 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'column',
-    backgroundColor: 'orange'
   },
   buttonContainer: {
     height: 50,
@@ -30,20 +29,43 @@ export const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   viewHeader: {
-    height: '10%',
+    height: '15%',
     width: '100%',
-    backgroundColor: 'red',
+    backgroundColor: 'lightblue',
     justifyContent: 'center',
     alignItems: 'center'
   },
   headTextContainer: {
-    width: '50%',
+    width: '100%',
     justifyContent: 'center',
     alignItems: 'center'
   },
+  viewHeaderText:{
+    fontSize: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+    // width: '100%'
+  },
   bodyContainer: {
-    height: '90%',
+    height: '85%',
+    width: '100%',
     flexDirection: 'column',
-    backgroundColor: 'pink'
+  },
+  likertSectionTitle:{
+    height: '20%',
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  likertHeader:{
+    fontSize: 30
+  },
+  likertScaleContainer:{
+    backgroundColor: 'white',
+    width: '100%',
+    height: '80%'
+  },
+  likertBar:{
+    flexDirection: 'row'
   }
 });
