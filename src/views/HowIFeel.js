@@ -58,6 +58,11 @@ export default class HowIFeel extends Component {
       AsyncStorage.setItem('questions', JSON.stringify(tempObj));
     })
   }
+  clearRatings(){
+    AsyncStorage.removeItem('questions', (err) => {
+      console.warn(err)
+    })
+  }
   render() {
     return (
       <View style={styles.container}>
