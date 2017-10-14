@@ -13,7 +13,7 @@ export default class HowIFeel extends Component {
     key: 'Mood',
     rating: null
   }, {
-    key: 'How Painful?',
+    key: "How's Your Pain?",
     rating: null
   }, {
     key: 'Where Does It Hurt?',
@@ -89,11 +89,15 @@ export default class HowIFeel extends Component {
               </Text>
             </View>
             <View>
-            <TouchableOpacity onPress={this.saveRatings.bind(this)}>
-              <Text>
-                Submit
-              </Text>
-            </TouchableOpacity>
+              <View>
+            {this.state.index === 4?
+              (<TouchableOpacity onPress={this.saveRatings.bind(this)}>
+                <Text>
+                  Submit
+                </Text>
+              </TouchableOpacity>) : null
+            }
+          </View>
             </View>
             <View>
               <Text>
