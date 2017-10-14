@@ -48,7 +48,7 @@ export default class HowIFeel extends Component {
           <View style={styles.likertScaleContainer}>
             <RatingLikert selectRating={this.selectRating.bind(this)}/>
           </View>
-          <View>
+          <View style={styles.navBar}>
             <View>
               <Text>
                 Back

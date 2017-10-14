@@ -76,5 +76,10 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     // borderWidth: 1,
     // backgroundColor: 'orange'
+  },
+  navBar:{
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center'
   }
 });
