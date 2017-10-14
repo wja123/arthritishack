@@ -39,15 +39,28 @@ export default class Stories extends Component {
         <FlatList
           data={this.state.data}
           renderItem={({ item }) => (
-            <View style={{flexDirection: "row", justifyContent: 'center', paddingTop: 30, paddingBottom: 30}}>
-              <Image source={{uri: item.image1}} style={{width: 150, height: 150, resizeMode: Image.resizeMode.contain}}>
-              </Image>
-              <Image source={{uri: item.image2}} style={{width: 150, height: 150, resizeMode: Image.resizeMode.contain}}>
-              </Image>
+            <View style={{paddingTop: 30, paddingBottom: 20, alignItems: 'center'}}>
+              <View style={{flexDirection: "row", justifyContent: 'center', paddingBottom: 30}}>
+                <Image source={{uri: item.image1}} style={{width: 150, height: 150, resizeMode: Image.resizeMode.contain}}>
+                </Image>
+                <Image source={{uri: item.image2}} style={{width: 150, height: 150, resizeMode: Image.resizeMode.contain}}>
+                </Image>
               </View>
+
+              <TouchableOpacity
+                style={{width: 150,
+                  height: 40,
+                  borderRadius: 6,
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  backgroundColor: 'purple'}}>
+                <Text style={{color: 'white', fontWeight: "bold"}}>LEARN MORE</Text>
+              </TouchableOpacity>
+
+            </View>
           )}
           ItemSeparatorComponent={this.renderSeparator}
-          keyExtractor={item => item.title}
+          keyExtractor={item => item.id}
         />
         </View>
 
