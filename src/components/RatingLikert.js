@@ -6,11 +6,11 @@ const iconSize = 70;
 
 
 const likert = [
-  {key: "Very Bad", icon: "sentiment-very-dissatisfied"},
-  {key: "Bad", icon: "sentiment-dissatisfied"},
-  {key: "Okay", icon: "sentiment-neutral"},
-  {key: "Good", icon: "sentiment-satisfied"},
-  {key: "Great", icon: "sentiment-very-satisfied"}
+  {key: "Very Bad", icon: "sentiment-very-dissatisfied", color: 'red'},
+  {key: "Bad", icon: "sentiment-dissatisfied", color: 'orange'},
+  {key: "Okay", icon: "sentiment-neutral", color:'gold'},
+  {key: "Good", icon: "sentiment-satisfied", color: 'lightgreen'},
+  {key: "Great", icon: "sentiment-very-satisfied", color:'darkgreen'}
 ];
 
 export const RatingLikert = (props) => {
@@ -23,7 +23,7 @@ export const RatingLikert = (props) => {
           }}>
           <View style={styles.likertButtonContainer}>
             <View>
-              <Icon name={x.icon} size={iconSize} color="#900" />
+              <Icon name={x.icon} size={iconSize} color={x.color} />
             </View>
             <View>
               <Text>
