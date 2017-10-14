@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {View, Text, TouchableOpacity} from 'react-native'
+import {View, Text, TouchableOpacity, AsyncStorage} from 'react-native'
 import {styles} from '../styles/styles'
 import {RatingLikert} from '../components/RatingLikert'
 
@@ -8,7 +8,24 @@ export default class HowIFeel extends Component {
     super(props);
     this.state = {
       index: 0,
-      questions: [{key: 'Mood', rating: null}, {key: 'Pain', rating: null}, {key: 'Distribution', rating: null}, {key: 'Strength/Weakness', rating: null},  {key: 'Fatigue', rating: null}],
+      questions : [
+  {
+    key: 'Mood',
+    rating: null
+  }, {
+    key: 'Pain',
+    rating: null
+  }, {
+    key: 'Distribution',
+    rating: null
+  }, {
+    key: 'Strength/Weakness',
+    rating: null
+  }, {
+    key: 'Fatigue',
+    rating: null
+  }
+],
     }
   }
   selectRating(value){
