@@ -46,6 +46,13 @@ export default class HowIFeel extends Component {
       this.setState({index: this.state.index + 1})
     }
   }
+  saveRatings(){
+    let questionsObj = {};
+    questionsObj.questions = this.state.questions.slice();
+    questionsObj.time = Date.now();
+    console.warn(JSON.stringify(questionsObj));
+    AsyncStorage.setItem('questions', JSON.stringify(questionsObj));
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -72,9 +79,11 @@ export default class HowIFeel extends Component {
               </Text>
             </View>
             <View>
+            <TouchableOpacity onPress={this.saveRatings.bind(this)}>
               <Text>
                 Submit
               </Text>
+            </TouchableOpacity>
             </View>
             <View>
               <Text>
