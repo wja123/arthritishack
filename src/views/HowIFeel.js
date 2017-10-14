@@ -13,10 +13,10 @@ export default class HowIFeel extends Component {
     key: 'Mood',
     rating: null
   }, {
-    key: 'Pain',
+    key: 'How Painful?',
     rating: null
   }, {
-    key: 'Distribution',
+    key: 'Where Does It Hurt?',
     rating: null
   }, {
     key: 'Strength/Weakness',
@@ -29,9 +29,10 @@ export default class HowIFeel extends Component {
     }
   }
   selectRating(value){
-    let newQuestionState =this.state.questions.slice();
+    let newQuestionState = this.state.questions.slice();
     newQuestionState[this.state.index] = Object.assign({}, this.state.questions[this.state.index], {rating: value + 1})
     this.setState({questions: newQuestionState})
+
     if(this.state.index < this.state.questions.length - 1){
       this.setState({index: this.state.index + 1})
     }
@@ -47,11 +48,15 @@ export default class HowIFeel extends Component {
     }
   }
   saveRatings(){
-    let questionsObj = {};
-    questionsObj.questions = this.state.questions.slice();
-    questionsObj.time = Date.now();
-    console.warn(JSON.stringify(questionsObj));
-    AsyncStorage.setItem('questions', JSON.stringify(questionsObj));
+    AsyncStorage.getItem('questions', (err, quest) => {
+      let questionsObj = {};
+      let tempObj = JSON.parse(quest).questions;
+      questionsObj.questions = this.state.questions.slice();
+      questionsObj.time = Date.now();
+      console.warn(JSON.stringify(questionsObj));
+      tempObj.push(questionsObj);
+      AsyncStorage.setItem('questions', JSON.stringify(tempObj));
+    })
   }
   render() {
     return (

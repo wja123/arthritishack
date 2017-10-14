@@ -10,7 +10,7 @@ export default class Stories extends Component {
           <Text style={styles.viewHeaderText}>Stories</Text>
         </View>
         <View style={[styles.bodyContainer]}>
-
+          
         </View>
       </View>
     )

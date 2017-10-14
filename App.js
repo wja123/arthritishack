@@ -14,7 +14,7 @@ import Stories from './src/views/Stories'
 export default class App extends Component<{}> {
   render() {
     return (
-      <Stories />
+      <HowIFeel />
     );
   }
 }
