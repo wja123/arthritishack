@@ -11,11 +11,12 @@ import HowIFeel from './src/views/HowIFeel'
 import Home from './src/views/Home'
 import Stories from './src/views/Stories'
 import PainPoints from './src/components/PainPoints'
+import Story1 from './src/components/Story1'
 
 export default class App extends Component<{}> {
   render() {
     return (
-      <HowIFeel />
+      <Story1 />
     );
   }
 }
