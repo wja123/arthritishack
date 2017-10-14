@@ -8,17 +8,26 @@ export default class HowIFeel extends Component {
     super(props);
     this.state = {
       index: 0,
-      questions: [{key: 'Mood', rating: 0}, {key: 'Pain', rating: 0}, {key: 'Distribution', rating: 0}, {key: 'Strength/Weakness', rating: 0},  {key: 'Fatigue', rating: 0}],
+      questions: [{key: 'Mood', rating: null}, {key: 'Pain', rating: null}, {key: 'Distribution', rating: null}, {key: 'Strength/Weakness', rating: null},  {key: 'Fatigue', rating: null}],
     }
   }
   selectRating(value){
     let newQuestionState =this.state.questions.slice();
-    newQuestionState[this.state.index] =Object.assign({}, this.state.questions[this.state.index], {rating: value})
+    newQuestionState[this.state.index] = Object.assign({}, this.state.questions[this.state.index], {rating: value + 1})
     this.setState({questions: newQuestionState})
     if(this.state.index < this.state.questions.length - 1){
       this.setState({index: this.state.index + 1})
     }
-    console.warn(JSON.stringify(this.state))
+  }
+  navBack(){
+    if(this.state.index > 0){
+      this.setState({index: this.state.index - 1})
+    }
+  }
+  navForward(){
+    if(this.state.index < this.state.questions.length -1){
+      this.setState({index: this.state.index + 1})
+    }
   }
   render() {
     return (
@@ -38,6 +47,23 @@ export default class HowIFeel extends Component {
           </View>
           <View style={styles.likertScaleContainer}>
             <RatingLikert selectRating={this.selectRating.bind(this)}/>
+          </View>
+          <View>
+            <View>
+              <Text>
+                Back
+              </Text>
+            </View>
+            <View>
+              <Text>
+                Submit
+              </Text>
+            </View>
+            <View>
+              <Text>
+                Forward
+              </Text>
+            </View>
           </View>
         </View>
       </View>

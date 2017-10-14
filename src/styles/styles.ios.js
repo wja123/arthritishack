@@ -63,7 +63,7 @@ export const styles = StyleSheet.create({
   likertScaleContainer:{
     backgroundColor: 'white',
     width: '100%',
-    height: '80%'
+    height: '70%'
   },
   likertBar:{
     flexDirection: 'row',
