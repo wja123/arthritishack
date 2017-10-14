@@ -8,7 +8,7 @@ const ratingScale = []
 export const RatingLikert = (props) => {
   return (
     <View>
-
+      
     </View>
   )
 }

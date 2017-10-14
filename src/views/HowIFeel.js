@@ -3,15 +3,12 @@ import {View, Text, TouchableOpacity} from 'react-native'
 import {styles} from '../styles/styles'
 import {RatingLikert} from '../components/RatingLikert'
 
-const questions =['Mood', 'Pain', 'Distribution', 'Strength/Weakness', 'Fatigue']
-
 export default class HowIFeel extends Component {
   constructor(props){
     super(props);
     this.state = {
       index: 0,
-      questions: ['Mood', 'Pain', 'Distribution', 'Strength/Weakness', 'Fatigue'],
-      rating: [0,0,0,0,0]
+      questions: [{key: 'Mood', rating: 0}, {key: 'Pain', rating: 0}, {key: 'Distribution', rating: 0}, {key: 'Strength/Weakness', rating: 0},  {key: 'Fatigue', rating: 0}],
     }
   }
   render() {
@@ -27,7 +24,7 @@ export default class HowIFeel extends Component {
         <View style={styles.bodyContainer}>
           <View>
             <Text>
-              {questions[0]}
+              {this.state.questions[0].key}
             </Text>
           </View>
           <View>
