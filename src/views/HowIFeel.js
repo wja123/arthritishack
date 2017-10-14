@@ -12,8 +12,13 @@ export default class HowIFeel extends Component {
     }
   }
   selectRating(value){
-    let newQuestionState = Object.assign({}, this.state.questions, {key: this.state.questions[this.state.index].key, rating: value});
+    let newQuestionState =this.state.questions.slice();
+    newQuestionState[this.state.index] =Object.assign({}, this.state.questions[this.state.index], {rating: value})
     this.setState({questions: newQuestionState})
+    if(this.state.index < this.state.questions.length - 1){
+      this.setState({index: this.state.index + 1})
+    }
+    console.warn(JSON.stringify(this.state))
   }
   render() {
     return (
@@ -28,11 +33,11 @@ export default class HowIFeel extends Component {
         <View style={styles.bodyContainer}>
           <View style={styles.likertSectionTitle}>
             <Text style={styles.likertHeader}>
-              {this.state.questions[0].key}
+              {this.state.questions[this.state.index].key}
             </Text>
           </View>
           <View style={styles.likertScaleContainer}>
-            <RatingLikert />
+            <RatingLikert selectRating={this.selectRating.bind(this)}/>
           </View>
         </View>
       </View>

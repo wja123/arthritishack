@@ -66,6 +66,15 @@ export const styles = StyleSheet.create({
     height: '80%'
   },
   likertBar:{
-    flexDirection: 'row'
+    flexDirection: 'row',
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  likertButtonContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    // borderWidth: 1,
+    // backgroundColor: 'orange'
   }
 });
