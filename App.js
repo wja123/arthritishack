@@ -44,7 +44,7 @@ export default class App extends Component<{}> {
       }
     }
     render() {
-      return <PainPoints />
+      return this.viewRender(this.state.view)
     }
 }
 

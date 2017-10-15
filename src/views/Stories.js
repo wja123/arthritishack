@@ -72,7 +72,7 @@ export default class Stories extends Component {
       },
       {
         image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/Page11.001.jpeg',
-        caption: 'Arthritis can seem very scary, but with just a few changes in your life you can feel completely fine. Check out the other stories to learn more about arthritis, and what you can do to make yourself feel better. Have fun - see you around!'
+        caption: 'Arthritis can seem very scary, but with just a few changes in your life you can feel completely fine. Read more of our stories to learn more about arthritis, and what you can do to make yourself feel better.'
       },
     ]
   }, {

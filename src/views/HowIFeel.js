@@ -150,9 +150,13 @@ export default class HowIFeel extends Component {
             </Text>
           </View>
           <View style={styles.likertScaleContainer}>
-            <RatingLikert selectRating={this.selectRating.bind(this)}/>
+            <RatingLikert
+              selectRating={this.selectRating.bind(this)}
+              question={this.state.questions[this.state.index].key}
+              likertText={this.state.likertText}
+              />
           </View>
-
+          {this.footer()}
         </View>
       </View>
     )
