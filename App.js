@@ -12,7 +12,7 @@ import {Home} from './src/views/Home'
 import Stories from './src/views/Stories'
 import PainPoints from './src/components/PainPoints'
 import {Progress} from './src/components/Progress'
-import {Scoreboard} from './src/components/Scoreboard'
+import Scoreboard from './src/views/Scoreboard'
 import Resources from './src/views/Resources'
 
 export default class App extends Component<{}> {
