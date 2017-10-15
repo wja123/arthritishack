@@ -159,7 +159,7 @@ export default class HowIFeel extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={[styles.viewHeader, {flexDirection: 'row-reverse'}]}>
+        <View style={[styles.viewHeader, {flexDirection: 'row-reverse', backgroundColor:'orange'}]}>
           <View style={{width: '20%'}}></View>
           <View style={{width: '60%', height: '100%', justifyContent: 'center',alignItems:'center'}}>
             <Text style={[styles.viewHeaderText, {fontSize: 25}]}>Symptom Tracking</Text>
