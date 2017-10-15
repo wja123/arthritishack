@@ -84,6 +84,8 @@ export default class Resources extends Component {
   videoPage(){
     return (
       <ScrollView>
+
+      <Text style={{marginTop: 40, fontWeight: "bold", fontSize: 20}}>What is a Medicine?</Text>
       <YTViewer
         videoId="9OK6_OdWxTA"
         play={true}
@@ -94,9 +96,10 @@ export default class Resources extends Component {
         onChangeState={e => this.setState({ status: e.state })}
         onChangeQuality={e => this.setState({ quality: e.quality })}
 
-        style={{height: 300, marginTop: 30, borderColor: "white"}}>
+        style={{height: 300, borderColor: "white"}}>
       </YTViewer>
 
+      <Text style={{marginTop: 40, fontWeight: "bold", fontSize: 20}}>What does a Doctor do?</Text>
       <YTViewer
         videoId="_OQ7hgr0KlY"
         play={true}
@@ -107,9 +110,10 @@ export default class Resources extends Component {
         onChangeState={e => this.setState({ status: e.state })}
         onChangeQuality={e => this.setState({ quality: e.quality })}
 
-        style={{height: 300, marginTop: 30, borderColor: "white"}}>
+        style={{height: 300, borderColor: "white"}}>
       </YTViewer>
 
+      <Text style={{marginTop: 40, fontWeight: "bold", fontSize: 20}}>Don't be afraid of the Doctor</Text>
       <YTViewer
         videoId="FfwsLj97BOk"
         play={false}
@@ -120,7 +124,7 @@ export default class Resources extends Component {
         onChangeState={e => this.setState({ status: e.state })}
         onChangeQuality={e => this.setState({ quality: e.quality })}
 
-        style={{height: 300, marginTop: 30, borderColor: "white"}}>
+        style={{height: 300, borderColor: "white"}}>
       </YTViewer>
       </ScrollView>
     )
