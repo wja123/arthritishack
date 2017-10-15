@@ -70,7 +70,7 @@ export default class HowIFeel extends Component {
         <View style={[styles.viewHeader, {flexDirection: 'row-reverse'}]}>
           <View style={{width: '20%'}}></View>
           <View style={{width: '60%', height: '100%', justifyContent: 'center',alignItems:'center'}}>
-            <Text style={[styles.viewHeaderText, {fontSize: 25}]}>How Do You Feel?</Text>
+            <Text style={[styles.viewHeaderText, {fontSize: 25}]}>Symptom Tracking</Text>
           </View>
           <View style={{width: '20%'}}>
             <TouchableOpacity onPress={() => { this.props.navView('HOME')}}>
