@@ -1,5 +1,5 @@
 import React, { Component } from  'react';
-import {StyleSheet, Text, View, ImageBackground, Image, TouchableOpacity, FlatList} from 'react-native'
+import {StyleSheet, Text, View, ImageBackground, Image, TouchableOpacity, FlatList, Linking} from 'react-native'
 import {styles} from '../styles/styles'
 import {Story} from '../components/Story'
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -70,6 +70,7 @@ export default class Resources extends Component {
                     justifyContent: 'center',
                     alignItems: 'center',
                     backgroundColor: 'white'}}
+                    onPress={()=> Linking.openURL(item.url)}
                     >
                   <Text style={{color: 'black', fontWeight: "bold"}}>{item.title}</Text>
                 </TouchableOpacity>
