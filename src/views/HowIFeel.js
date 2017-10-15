@@ -66,18 +66,18 @@ export default class HowIFeel extends Component {
       {key: "Great", image: "https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/How%20do%20I%20feel/5_likert.gif", color:'darkgreen'}
     ],
     [
-      {key: "Extremely Weak", image: "https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/How%20do%20I%20feel/1_likert.gif", color: 'red'},
+      {key: "Very Weak", image: "https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/How%20do%20I%20feel/1_likert.gif", color: 'red'},
       {key: "Weak", image: "https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/How%20do%20I%20feel/2_likert.gif", color: 'orange'},
       {key: "Normal", image: "https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/How%20do%20I%20feel/3_likert.gif", color:'gold'},
       {key: "Strong", image: "https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/How%20do%20I%20feel/4_likert.gif", color: 'lightgreen'},
       {key: "Super Strong", image: "https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/How%20do%20I%20feel/5_likert.gif", color:'darkgreen'}
     ],
     [
-      {key: "Extremely Low", image: "https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/How%20do%20I%20feel/1_likert.gif", color: 'red'},
+      {key: "Very Low", image: "https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/How%20do%20I%20feel/1_likert.gif", color: 'red'},
       {key: "Low", image: "https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/How%20do%20I%20feel/2_likert.gif", color: 'orange'},
       {key: "Normal", image: "https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/How%20do%20I%20feel/3_likert.gif", color:'gold'},
-      {key: "Very", image: "https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/How%20do%20I%20feel/4_likert.gif", color: 'lightgreen'},
-      {key: "Extremely", image: "https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/How%20do%20I%20feel/5_likert.gif", color:'darkgreen'}
+      {key: "High", image: "https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/How%20do%20I%20feel/4_likert.gif", color: 'lightgreen'},
+      {key: "Super", image: "https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/How%20do%20I%20feel/5_likert.gif", color:'darkgreen'}
     ],
 
   ]
@@ -113,7 +113,6 @@ export default class HowIFeel extends Component {
   saveRatings(){
     AsyncStorage.getItem('questions', (err, quest) => {
       let questionsObj = {};
-      console.warn(quest)
       let tempObj = quest? JSON.parse(quest) : [];
       questionsObj.questions = this.state.questions.slice();
       questionsObj.time = Date.now();

@@ -18,7 +18,7 @@ export const RatingLikert = (props) => {
   const likert = props.likertText;
   return (
     props.likertIndex === 2?
-    <View style={{height: '100%', width: '100%'}}>
+    <View>
         <PainPoints setPainPoints={(values)=>{props.selectRating(values)}}/>
     </View>
     :
@@ -32,7 +32,7 @@ export const RatingLikert = (props) => {
               <Image source={{uri: x.image}} style={{height: width/5, width: width/5, resizeMode: 'contain'}} />
             </View>
             <View>
-              <Text>
+              <Text style={{fontSize: 12}}>
                 {x.key}
               </Text>
             </View>

@@ -15,20 +15,23 @@ export default class PainPoints extends Component {
   	super(props);
   	this.state = {
       painPoints: {
-        '4-8': {name: 'Right Shoulder', selected: false},
-        '4-10': {name: 'Right Elbow', selected: false},
-        '4-12': {name: 'Right Wrist', selected: false},
-        '4-13': {name: 'Right Fingers', selected: false},
-        '5-12': {name: 'Right Hip', selected: false},
-        '7-12': {name: 'Left Hip', selected: false},
-        '5-17': {name: 'Right Ankle', selected: false},
-        '7-17': {name: 'Left Angle', selected: false},
-        '5-15': {name: 'Right Knee', selected: false},
-        '8-8': {name: 'Left Shoulder', selected: false},
-        '8-10': {name: 'Left Elbow', selected: false},
-        '8-12': {name: 'Left Wrist', selected: false},
-        '8-13': {name: 'Left Fingers', selected: false},
-        '7-15': {name: 'Left Knee', selected: false},
+        '7-8': {name: 'Neck', selected: false},
+        '5-6': {name: 'Right Jaw', selected: false},
+        '9-6': {name: 'Left Jaw', selected: false},
+        '5-8': {name: 'Right Shoulder', selected: false},
+        '5-10': {name: 'Right Elbow', selected: false},
+        '5-12': {name: 'Right Wrist', selected: false},
+        '5-14': {name: 'Right Fingers', selected: false},
+        '6-12': {name: 'Right Hip', selected: false},
+        '8-12': {name: 'Left Hip', selected: false},
+        '6-17': {name: 'Right Ankle', selected: false},
+        '8-17': {name: 'Left Angle', selected: false},
+        '6-15': {name: 'Right Knee', selected: false},
+        '9-8': {name: 'Left Shoulder', selected: false},
+        '9-10': {name: 'Left Elbow', selected: false},
+        '9-12': {name: 'Left Wrist', selected: false},
+        '9-14': {name: 'Left Fingers', selected: false},
+        '8-15': {name: 'Left Knee', selected: false},
       }
     };
   }
@@ -43,19 +46,18 @@ export default class PainPoints extends Component {
   returnGrid() {
     let grid = []
     let tempRow = [];
-    for (let i = 0, len = 400 / 30; i < len; i++) {
-      for (let j = 0, len = 600 / 30; j < len; j++) {
+    for (let i = 0, len = 300 / 20; i < len; i++) {
+      for (let j = 0, len = 400 / 20; j < len; j++) {
         let bgColor = !this.state.painPoints[i+'-'+j]? 'rgba(0,0,0,0)': (this.state.painPoints[i+'-'+j].selected? 'rgba(200,0,0,0.4)' : 'rgba(0,0,0,0.2)');
         let bordRadius = !this.state.painPoints[i+'-'+j]? 'rgba(0,0,0,0)': (this.state.painPoints[i+'-'+j].selected? 'rgba(200,0,0,0.4)' : 'rgba(0,0,0,0.2)');
         tempRow.push(
             <View key={i + '-' + j} style={[{
-              width: 30,
-              height: 30,
+              width: 20,
+              height: 20,
               borderRadius: 50,
             },{backgroundColor: bgColor}]}>
               {this.state.painPoints[i+'-'+j]? (<TouchableOpacity style={{height: '100%', width: '100%'}} onPress={() => this.selectPainPoint(i+'-'+j)}>
-              </TouchableOpacity>):
-              null
+            </TouchableOpacity>): null
             }
             </View>
         )
@@ -69,17 +71,14 @@ export default class PainPoints extends Component {
 render() {
   return (
     <View style={{
-      height: '90%',
-      width: '100%',
-      // backgroundColor: 'blue',
       justifyContent: 'center',
-      alignItems: 'center'
+      alignItems: 'center',
     }}>
       <ImageBackground source={{
-        uri: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/Homonculus/joint_homunculus_labeled.001.jpeg'
+        uri: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/Homonculus/joint_homunculus_labeled_updated.001.png'
       }} style={{
-        width: 400,
-        height: 600
+        width: 300,
+        height: 400,
       }} imageStyle={{
         resizeMode: 'contain'
       }}>
@@ -88,12 +87,48 @@ render() {
           height: '100%',
           flexDirection: 'row',
           margin: 0,
-          padding: 0
+          padding: 0,
+          // backgroundColor: 'purple'
         }}>
           {this.returnGrid()}
         </View>
       </ImageBackground>
     </View>
   )
+
+
+
+
+
+
+
+  // return (
+  //   <View style={{
+  //     height: '90%',
+  //     width: '100%',
+  //     // backgroundColor: 'blue',
+  //     justifyContent: 'center',
+  //     alignItems: 'center'
+  //   }}>
+  //     <ImageBackground source={{
+  //       uri: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/Homonculus/joint_homunculus_labeled_updated.001.png'
+  //     }} style={{
+  //       width: 400,
+  //       height: 600
+  //     }} imageStyle={{
+  //       resizeMode: 'contain'
+  //     }}>
+  //       <View style={{
+  //         width: '100%',
+  //         height: '100%',
+  //         flexDirection: 'row',
+  //         margin: 0,
+  //         padding: 0
+  //       }}>
+  //         {this.returnGrid()}
+  //       </View>
+  //     </ImageBackground>
+  //   </View>
+  // )
 }
 }
