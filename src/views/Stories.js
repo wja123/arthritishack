@@ -39,8 +39,40 @@ export default class Stories extends Component {
         caption: 'During recess, I’m so tired that I can’t even go play with my friends…'
       },
       {
-        image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/page5.jpg',
-        caption: 'CAPTION 6'
+        image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/Page5a.001.jpeg',
+        caption: '…And when I get home, I can’t focus on any of my homework'
+      },
+      {
+        image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/Page6.001.jpeg',
+        caption: 'Mommy took me to the doctor… I was a little afraid at first, but the doctor was actually really nice!'
+      },
+      {
+        image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/Page6.001.jpeg',
+        caption: 'He told me I had something called “arthritis”, and that’s why I was feeling so terrible these past few months'
+      },
+      {
+        image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/Page6.001.jpeg',
+        caption: 'Luckily, with just a few medications, healthy eating, and physical activity, the doctor said I could feel good again!'
+      },
+      {
+        image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/Page7.001.jpeg',
+        caption: 'Now, I sleep great and am able to get up easily most mornings'
+      },
+      {
+        image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/Page8.001.jpeg',
+        caption: 'I’m eating much healthier now - I especially love watermelon!'
+      },
+      {
+        image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/Page9.001.jpeg',
+        caption: 'I’m also back to playing with my friends now. We play soccer every week.'
+      },
+      {
+        image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/Page10.001.jpeg',
+        caption: 'I’m doing great in school too! Math is my favourite subject.'
+      },
+      {
+        image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/Page11.001.jpeg',
+        caption: 'Arthritis can seem very scary, but with just a few changes in your life you can feel completely fine. Check out the other stories to learn more about arthritis, and what you can do to make yourself feel better. Have fun - see you around!'
       },
     ]
   }, {
