@@ -102,7 +102,7 @@ export default class Resources extends Component {
       <Text style={{marginTop: 40, fontWeight: "bold", fontSize: 20}}>What does a Doctor do?</Text>
       <YTViewer
         videoId="_OQ7hgr0KlY"
-        play={true}
+        play={false}
         loop={true}
 
         onError={e => this.setState({ error: e.error })}
