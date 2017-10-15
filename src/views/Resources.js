@@ -3,6 +3,7 @@ import {StyleSheet, Text, View, ImageBackground, Image, TouchableOpacity, FlatLi
 import {styles} from '../styles/styles'
 import {Story} from '../components/Story'
 import Icon from 'react-native-vector-icons/MaterialIcons';
+
 export default class Resources extends Component {
 
   constructor(props) {

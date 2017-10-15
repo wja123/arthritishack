@@ -11,12 +11,9 @@ import HowIFeel from './src/views/HowIFeel'
 import {Home} from './src/views/Home'
 import Stories from './src/views/Stories'
 import PainPoints from './src/components/PainPoints'
-<<<<<<< HEAD
-import Progress from './src/components/Progress'
-import Scoreboard from './src/components/Scoreboard'
-=======
+import {Progress} from './src/components/Progress'
+import {Scoreboard} from './src/components/Scoreboard'
 import Resources from './src/views/Resources'
->>>>>>> 0c4aefce272f25b1c38b5df6a45629625f45412f
 
 export default class App extends Component<{}> {
   constructor(props){
@@ -36,6 +33,10 @@ export default class App extends Component<{}> {
           return <HowIFeel navView={this.navView.bind(this)}/>
         case 'STORY TIME':
           return <Stories navView={this.navView.bind(this)}/>
+        case 'SCOREBOARD':
+          return <Scoreboard navView={this.navView.bind(this)}/>
+        case 'TRACKING & MONITORING':
+          return <Progress navView={this.navView.bind(this)}/>
         case 'RESOURCES':
           return <Resources navView={this.navView.bind(this)}/>
         default:

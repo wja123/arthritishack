@@ -20,23 +20,23 @@ export default class Stories extends Component {
     storyData : [
       {
         image: 'https://github.com/wja123/arthritishack/blob/master/src/assets/story1/page0.png?raw=true',
-        caption: 'CAPTION 1'
+        caption: 'Hi, I’m Timmy! I love sports, school, and spending time with my family'
       },
       {
         image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/page1.jpg',
-        caption: 'CAPTION 2'
+        caption: 'Normally I can’t wait to get to school, but these days I can’t even get out of bed in the morning…'
       },
       {
         image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/page2.jpg',
-        caption: 'CAPTION 3'
+        caption: 'I love having breakfast with my family, but lately I haven’t been feeling hungry… Just really weak'
       },
       {
         image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/page3.jpg',
-        caption: 'CAPTION 4'
+        caption: 'Mrs. Duke teaches math really well, and she even gives us healthy snacks when we get questions right. I love math, but lately I’m having trouble seeing the board!'
       },
       {
         image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/page4.jpg',
-        caption: 'CAPTION 5'
+        caption: 'During recess, I’m so tired that I can’t even go play with my friends…'
       },
       {
         image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/page5.jpg',
