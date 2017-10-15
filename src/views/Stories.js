@@ -206,9 +206,9 @@ export default class Stories extends Component {
     return (
       !this.state.showStory ?
         <View style={[styles.container]}>
-      <View style={[styles.viewHeader, {flexDirection: 'row-reverse'}]}>
+      <View style={[styles.viewHeader, {flexDirection: 'row-reverse', backgroundColor: "orange"}]}>
         <View style={{width: '20%'}}></View>
-        <View style={{width: '60%', height: '100%', justifyContent: 'center',alignItems:'center'}}>
+        <View style={{width: '60%', height: '100%', justifyContent: 'center', alignItems:'center'}}>
           <Text style={styles.viewHeaderText}>Stories</Text>
         </View>
         <View style={{width: '20%'}}>
