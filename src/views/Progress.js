@@ -12,7 +12,7 @@ export default class Progress extends Component {
   render(){
       return (
       <View style={[styles.container, {backgroundColor: '#ffe331'}]}>
-        <ImageBackground style={{flex: 1, marginTop: 10}} source={{uri: 'https://github.com/wja123/arthritishack/blob/master/src/assets/progress/progress.jpg?raw=true'}}>
+        <ImageBackground style={{flex: 1, marginTop: 10}} source={{uri: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/progress/progress.jpg'}}>
           <View style={{flexDirection: 'row'}}>
             <View style={{width: '100%'}}>
               <TouchableOpacity style={{backgroundColor: 'rgba(0,0,0,0)'}} onPress={() => { this.props.navView('HOME')}}>
