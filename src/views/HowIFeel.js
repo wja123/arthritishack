@@ -18,7 +18,23 @@ export default class HowIFeel extends Component {
     rating: null
   }, {
     key: 'Where Does It Hurt?',
-    rating: null
+    rating: null,
+    painPoints: {
+      '4-8': {name: 'Right Shoulder', selected: false},
+      '4-10': {name: 'Right Elbow', selected: false},
+      '4-12': {name: 'Right Wrist', selected: false},
+      '4-13': {name: 'Right Fingers', selected: false},
+      '5-12': {name: 'Right Hip', selected: false},
+      '7-12': {name: 'Left Hip', selected: false},
+      '5-17': {name: 'Right Ankle', selected: false},
+      '7-17': {name: 'Left Angle', selected: false},
+      '5-15': {name: 'Right Knee', selected: false},
+      '8-8': {name: 'Left Shoulder', selected: false},
+      '8-10': {name: 'Left Elbow', selected: false},
+      '8-12': {name: 'Left Wrist', selected: false},
+      '8-13': {name: 'Left Fingers', selected: false},
+      '7-15': {name: 'Left Knee', selected: false},
+    }
   }, {
     key: 'How Strong Do You Feel',
     rating: null
@@ -40,7 +56,7 @@ export default class HowIFeel extends Component {
       {key: "Very Painful", image: "https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/How%20do%20I%20feel/2_likert.gif", color: 'orange'},
       {key: "Some Pain", image: "https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/How%20do%20I%20feel/3_likert.gif", color:'gold'},
       {key: "Little Pain", image: "https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/How%20do%20I%20feel/4_likert.gif", color: 'lightgreen'},
-      {key: "Pain Free", image: "https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/How%20do%20I%20feel/5_likert.gif", color:'darkgreen'}
+      {key: "No Pain", image: "https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/How%20do%20I%20feel/5_likert.gif", color:'darkgreen'}
     ],
     [
       {key: "Very Bad", image: "https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/How%20do%20I%20feel/1_likert.gif", color: 'red'},
@@ -68,17 +84,25 @@ export default class HowIFeel extends Component {
     }
   }
   selectRating(value){
-    let newQuestionState = this.state.questions.slice();
-    newQuestionState[this.state.index] = Object.assign({}, this.state.questions[this.state.index], {rating: value + 1})
-    this.setState({questions: newQuestionState})
+    if(Number.isInteger(value)){
+      let newQuestionState = this.state.questions.slice();
+      newQuestionState[this.state.index] = Object.assign({}, this.state.questions[this.state.index], {rating: value + 1})
+      this.setState({questions: newQuestionState})
 
-    if(this.state.index < this.state.questions.length - 1){
-      this.setState({index: this.state.index + 1})
+      if(this.state.index < this.state.questions.length - 1){
+        this.setState({index: this.state.index + 1})
+      }
+    } else{
+      let newQuestionState = this.state.questions.slice();
+      newQuestionState[this.state.index] = Object.assign({}, this.state.questions[this.state.index], {painPoints: value})
+      this.setState({questions: newQuestionState})
     }
   }
   navBack(){
     if(this.state.index > 0){
       this.setState({index: this.state.index - 1})
+    } else {
+      this.props.navView('Home')
     }
   }
   navForward(){
@@ -106,9 +130,11 @@ export default class HowIFeel extends Component {
     return (
       <View style={styles.navBar}>
         <View>
-          <Text>
-            Back
-          </Text>
+          <TouchableOpacity onPress={this.navBack.bind(this)}>
+            <Text>
+              Previous
+            </Text>
+          </TouchableOpacity>
         </View>
         <View>
           <View>
@@ -122,9 +148,11 @@ export default class HowIFeel extends Component {
       </View>
         </View>
         <View>
-          <Text>
-            Forward
-          </Text>
+          <TouchableOpacity onPress={this.navForward.bind(this)}>
+            <Text>
+              Next
+            </Text>
+        </TouchableOpacity>
         </View>
       </View>
     )
@@ -153,7 +181,10 @@ export default class HowIFeel extends Component {
             <RatingLikert
               selectRating={this.selectRating.bind(this)}
               question={this.state.questions[this.state.index].key}
-              likertText={this.state.likertText}
+              likertText={this.state.likertText[this.state.index]}
+              likertIndex={this.state.index}
+              navForward={this.navForward.bind(this)}
+              navBack={this.navBack.bind(this)}
               />
           </View>
           {this.footer()}

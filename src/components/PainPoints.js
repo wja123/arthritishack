@@ -37,6 +37,7 @@ export default class PainPoints extends Component {
       let painPoints = Object.assign({},this.state.painPoints);
       painPoints[point].selected = !painPoints[point].selected;
       this.setState({painPoints})
+      this.props.setPainPoints(this.state.painPoints)
     }
   }
   returnGrid() {
@@ -68,7 +69,8 @@ export default class PainPoints extends Component {
 render() {
   return (
     <View style={{
-      flex: 1,
+      height: '90%',
+      width: '100%',
       // backgroundColor: 'blue',
       justifyContent: 'center',
       alignItems: 'center'

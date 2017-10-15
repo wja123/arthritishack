@@ -4,6 +4,7 @@ import {styles} from '../styles/styles'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 const iconSize = 70;
 let {height, width} = Dimensions.get('window')
+import PainPoints from './PainPoints'
 
 const likert = [
   {key: "Very Bad", image: "https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/How%20do%20I%20feel/1_likert.gif", color: 'red'},
@@ -14,11 +15,16 @@ const likert = [
 ];
 
 export const RatingLikert = (props) => {
+  const likert = props.likertText;
   return (
+    props.likertIndex === 2?
+    <View style={{height: '100%', width: '100%'}}>
+        <PainPoints setPainPoints={(values)=>{props.selectRating(values)}}/>
+    </View>
+    :
     <View style={styles.likertBar}>
       {likert.map((x, index) => (
         <TouchableOpacity key={x.key} onPress={() => {
-
             props.selectRating(index);
           }}>
           <View style={styles.likertButtonContainer}>
