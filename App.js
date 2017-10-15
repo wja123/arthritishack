@@ -11,6 +11,7 @@ import HowIFeel from './src/views/HowIFeel'
 import {Home} from './src/views/Home'
 import Stories from './src/views/Stories'
 import PainPoints from './src/components/PainPoints'
+import Resources from './src/views/Resources'
 
 export default class App extends Component<{}> {
   constructor(props){
@@ -30,6 +31,8 @@ export default class App extends Component<{}> {
           return <HowIFeel navView={this.navView.bind(this)}/>
         case 'STORY TIME':
           return <Stories navView={this.navView.bind(this)}/>
+        case 'RESOURCES':
+          return <Resources navView={this.navView.bind(this)}/>
         default:
           return <Home navView={this.navView.bind(this)}/>
       }
