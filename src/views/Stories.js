@@ -31,8 +31,8 @@ export default class Stories extends Component {
         caption: 'I love having breakfast with my family, but lately I haven’t been feeling hungry… Just really weak'
       },
       {
-        image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/page3.jpg',
-        caption: 'Mrs. Duke teaches math really well, and she even gives us healthy snacks when we get questions right. I love math, but lately I’m having trouble seeing the board!'
+        image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/page3.gif',
+        caption: 'Mrs. Morris teaches math really well, and she even gives us healthy snacks when we get questions right. I love math, but lately I’m having trouble seeing the board!'
       },
       {
         image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/page4.jpg',
