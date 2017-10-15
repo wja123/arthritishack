@@ -77,7 +77,7 @@ export default class Stories extends Component {
     id: 3,
     title: 'Play',
     image1: 'https://github.com/wja123/arthritishack/blob/stories/src/assets/3_gif.gif?raw=true',
-    image2: 'https://github.com/wja123/arthritishack/blob/stories/src/assets/speechbubble3.gif?raw=true',
+    image2: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/speechbubble3.gif',
     storyData : [
       {
         image: 'https://github.com/wja123/arthritishack/blob/master/src/assets/story1/page0.png?raw=true',
