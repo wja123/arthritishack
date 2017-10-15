@@ -11,7 +11,7 @@ export default class HowIFeel extends Component {
       index: 0,
       questions : [
   {
-    key: 'Mood',
+    key: 'How Do You Feel Right Now?',
     rating: null
   }, {
     key: "How's Your Pain?",
@@ -20,10 +20,10 @@ export default class HowIFeel extends Component {
     key: 'Where Does It Hurt?',
     rating: null
   }, {
-    key: 'Strength/Weakness',
+    key: 'How Strong Do You Feel',
     rating: null
   }, {
-    key: 'Fatigue',
+    key: 'How Energetic Do You Feel',
     rating: null
   }
 ],
@@ -64,6 +64,33 @@ export default class HowIFeel extends Component {
       console.warn(err)
     })
   }
+  footer(){
+    return (
+      <View style={styles.navBar}>
+        <View>
+          <Text>
+            Back
+          </Text>
+        </View>
+        <View>
+          <View>
+        {this.state.index === 4?
+          (<TouchableOpacity onPress={this.saveRatings.bind(this)}>
+            <Text>
+              Submit
+            </Text>
+          </TouchableOpacity>) : null
+        }
+      </View>
+        </View>
+        <View>
+          <Text>
+            Forward
+          </Text>
+        </View>
+      </View>
+    )
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -87,29 +114,7 @@ export default class HowIFeel extends Component {
           <View style={styles.likertScaleContainer}>
             <RatingLikert selectRating={this.selectRating.bind(this)}/>
           </View>
-          <View style={styles.navBar}>
-            <View>
-              <Text>
-                Back
-              </Text>
-            </View>
-            <View>
-              <View>
-            {this.state.index === 4?
-              (<TouchableOpacity onPress={this.saveRatings.bind(this)}>
-                <Text>
-                  Submit
-                </Text>
-              </TouchableOpacity>) : null
-            }
-          </View>
-            </View>
-            <View>
-              <Text>
-                Forward
-              </Text>
-            </View>
-          </View>
+
         </View>
       </View>
     )
