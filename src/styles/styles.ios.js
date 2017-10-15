@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     margin: 2,
-    backgroundColor: 'lightblue'
+    backgroundColor: 'white'
   },
   buttonInner: {
     width: '100%',

@@ -2,8 +2,9 @@ import React, { Component } from  'react';
 import {StyleSheet, Text, View, ImageBackground, Image, TouchableOpacity, FlatList} from 'react-native'
 import {styles} from '../styles/styles'
 import {Story} from '../components/Story'
-export default class Stories extends Component {
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
+export default class Stories extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -173,8 +174,16 @@ export default class Stories extends Component {
     return (
       !this.state.showStory ?
         <View style={[styles.container]}>
-      <View style={[styles.viewHeader]}>
-        <Text style={styles.viewHeaderText}>Stories</Text>
+      <View style={[styles.viewHeader, {flexDirection: 'row-reverse'}]}>
+        <View style={{width: '20%'}}></View>
+        <View style={{width: '60%', height: '100%', justifyContent: 'center',alignItems:'center'}}>
+          <Text style={styles.viewHeaderText}>Stories</Text>
+        </View>
+        <View style={{width: '20%'}}>
+          <TouchableOpacity onPress={() => { this.props.navView('HOME')}}>
+            <Icon name={'keyboard-arrow-left'} size={35} color={'black'} />
+          </TouchableOpacity>
+        </View>
       </View>
       <View style={[styles.bodyContainer]}>
         <FlatList

@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {View, Text, TouchableOpacity, AsyncStorage} from 'react-native'
 import {styles} from '../styles/styles'
 import {RatingLikert} from '../components/RatingLikert'
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export default class HowIFeel extends Component {
   constructor(props){
@@ -66,11 +67,15 @@ export default class HowIFeel extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.viewHeader}>
-          <View style={styles.headTextContainer}>
-            <Text style={styles.viewHeaderText}>
-              How Do You Feel?
-            </Text>
+        <View style={[styles.viewHeader, {flexDirection: 'row-reverse'}]}>
+          <View style={{width: '20%'}}></View>
+          <View style={{width: '60%', height: '100%', justifyContent: 'center',alignItems:'center'}}>
+            <Text style={[styles.viewHeaderText, {fontSize: 25}]}>How Do You Feel?</Text>
+          </View>
+          <View style={{width: '20%'}}>
+            <TouchableOpacity onPress={() => { this.props.navView('HOME')}}>
+              <Icon name={'keyboard-arrow-left'} size={35} color={'black'} />
+            </TouchableOpacity>
           </View>
         </View>
         <View style={styles.bodyContainer}>

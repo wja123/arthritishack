@@ -27,9 +27,9 @@ export default class App extends Component<{}> {
         case 'Home':
           return <Home navView={this.navView.bind(this)}/>
         case 'HOW DO I FEEL':
-          return <HowIFeel />
+          return <HowIFeel navView={this.navView.bind(this)}/>
         case 'STORY TIME':
-          return <Stories />
+          return <Stories navView={this.navView.bind(this)}/>
         default:
           return <Home navView={this.navView.bind(this)}/>
       }
