@@ -10,8 +10,8 @@ export const Story = (props) => {
         <ImageBackground source={{uri: props.story[props.index].image}} style={{width: '100%', height: '100%'}} imageStyle={{resizeMode: 'contain'}}>
           <View style={{height: '100%', width: '100%', justifyContent: 'flex-end', flexDirection: 'column', backgroundColor: props.story[props.index].blur? 'rgba(256,256,256,0.9)': 'rgba(256,256,256,0)'}}>
             <View style={{height: '20%', width: '100%', justifyContent: 'center', alignItems: 'center'}}>
-              <View style={{height: '70%', width: '90%', justifyContent: 'center', alignItems: 'center'}}>
-                <Text style={{justifyContent: 'center', alignItems: 'center', fontSize: 18}}>
+              <View style={{height: '70%', width: '90%', justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(0,0,0,0.5)'}}>
+                <Text style={{justifyContent: 'center', alignItems: 'center', fontSize: 18, color: 'white'}}>
                   {props.story[props.index].caption}
                 </Text>
               </View>
