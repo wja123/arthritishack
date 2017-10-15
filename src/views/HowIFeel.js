@@ -39,7 +39,7 @@ export default class HowIFeel extends Component {
     key: 'How Strong Do You Feel',
     rating: null
   }, {
-    key: 'How Energetic Do You Feel',
+    key: "How's Your Energy Level ",
     rating: null
   }
 ],
