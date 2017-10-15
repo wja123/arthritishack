@@ -1,20 +1,147 @@
 import React, { Component } from  'react';
 import {StyleSheet, Text, View, ImageBackground, Image, TouchableOpacity, FlatList} from 'react-native'
 import {styles} from '../styles/styles'
-
+import {Story} from '../components/Story'
 export default class Stories extends Component {
 
   constructor(props) {
     super(props);
-
     this.state = {
-      data: [{ id: 1, title: 'Symptoms', image1:'https://github.com/wja123/arthritishack/blob/stories/src/assets/1_gif.gif?raw=true', image2: 'https://github.com/wja123/arthritishack/blob/stories/src/assets/speechbubble1.gif?raw=true'}, { id: 2, title: 'Medicines', image1:'https://github.com/wja123/arthritishack/blob/stories/src/assets/speechbubble2.gif?raw=true', image2:
-      'https://github.com/wja123/arthritishack/blob/stories/src/assets/2_gif.gif?raw=true'}, { id: 3, title: 'Play', image1: 'https://github.com/wja123/arthritishack/blob/stories/src/assets/3_gif.gif?raw=true', image2: 'https://github.com/wja123/arthritishack/blob/stories/src/assets/speechbubble3.gif?raw=true'}, { id: 4, title: 'Bath', image1:'https://github.com/wja123/arthritishack/blob/stories/src/assets/speechbubble4.gif?raw=true', image2: 'https://github.com/wja123/arthritishack/blob/stories/src/assets/4_gif.gif?raw=true'}],
+      storyIndex: 0,
+      menuIndex:0,
+      showStory: false,
+      data : [
+  {
+    id: 1,
+    title: 'Symptoms',
+    image1: 'https://github.com/wja123/arthritishack/blob/stories/src/assets/1_gif.gif?raw=true',
+    image2: 'https://github.com/wja123/arthritishack/blob/stories/src/assets/speechbubble1.gif?raw=true',
+    storyData : [
+      {
+        image: 'https://github.com/wja123/arthritishack/blob/master/src/assets/story1/page0.png?raw=true',
+        caption: 'CAPTION 1'
+      },
+      {
+        image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/page1.jpg',
+        caption: 'CAPTION 2'
+      },
+      {
+        image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/page2.jpg',
+        caption: 'CAPTION 3'
+      },
+      {
+        image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/page3.jpg',
+        caption: 'CAPTION 4'
+      },
+      {
+        image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/page4.jpg',
+        caption: 'CAPTION 5'
+      },
+      {
+        image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/page5.jpg',
+        caption: 'CAPTION 6'
+      },
+    ]
+  }, {
+    id: 2,
+    title: 'Medicines',
+    image1: 'https://github.com/wja123/arthritishack/blob/stories/src/assets/speechbubble2.gif?raw=true',
+    image2: 'https://github.com/wja123/arthritishack/blob/stories/src/assets/2_gif.gif?raw=true',
+    storyData : [
+      {
+        image: 'https://github.com/wja123/arthritishack/blob/master/src/assets/story1/page0.png?raw=true',
+        caption: 'CAPTION 1'
+      },
+      {
+        image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/page1.jpg',
+        caption: 'CAPTION 2'
+      },
+      {
+        image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/page2.jpg',
+        caption: 'CAPTION 3'
+      },
+      {
+        image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/page3.jpg',
+        caption: 'CAPTION 4'
+      },
+      {
+        image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/page4.jpg',
+        caption: 'CAPTION 5'
+      },
+      {
+        image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/page5.jpg',
+        caption: 'CAPTION 6'
+      },
+    ]
+  }, {
+    id: 3,
+    title: 'Play',
+    image1: 'https://github.com/wja123/arthritishack/blob/stories/src/assets/3_gif.gif?raw=true',
+    image2: 'https://github.com/wja123/arthritishack/blob/stories/src/assets/speechbubble3.gif?raw=true',
+    storyData : [
+      {
+        image: 'https://github.com/wja123/arthritishack/blob/master/src/assets/story1/page0.png?raw=true',
+        caption: 'CAPTION 1'
+      },
+      {
+        image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/page1.jpg',
+        caption: 'CAPTION 2'
+      },
+      {
+        image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/page2.jpg',
+        caption: 'CAPTION 3'
+      },
+      {
+        image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/page3.jpg',
+        caption: 'CAPTION 4'
+      },
+      {
+        image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/page4.jpg',
+        caption: 'CAPTION 5'
+      },
+      {
+        image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/page5.jpg',
+        caption: 'CAPTION 6'
+      },
+    ]
+  }, {
+    id: 4,
+    title: 'Bath',
+    image1: 'https://github.com/wja123/arthritishack/blob/stories/src/assets/speechbubble4.gif?raw=true',
+    image2: 'https://github.com/wja123/arthritishack/blob/stories/src/assets/4_gif.gif?raw=true',
+    storyData : [
+      {
+        image: 'https://github.com/wja123/arthritishack/blob/master/src/assets/story1/page0.png?raw=true',
+        caption: 'CAPTION 1'
+      },
+      {
+        image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/page1.jpg',
+        caption: 'CAPTION 2'
+      },
+      {
+        image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/page2.jpg',
+        caption: 'CAPTION 3'
+      },
+      {
+        image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/page3.jpg',
+        caption: 'CAPTION 4'
+      },
+      {
+        image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/page4.jpg',
+        caption: 'CAPTION 5'
+      },
+      {
+        image: 'https://raw.githubusercontent.com/wja123/arthritishack/master/src/assets/story1/page5.jpg',
+        caption: 'CAPTION 6'
+      },
+    ]
+  }
+],
       page: 1,
       seed: 1,
       error: null,
       refreshing: false,
-    };
+    }
   }
 
   renderSeparator = () => {
@@ -28,17 +155,31 @@ export default class Stories extends Component {
       />
     );
   };
-
+  next = (index) => {
+    if(this.state.storyIndex < this.state.data[index].storyData.length-1){
+      this.setState({storyIndex: this.state.storyIndex + 1})
+    } else {
+      this.setState({storyIndex: 0, showStory: false})
+    }
+  }
+  back = (index) => {
+    if(this.state.storyIndex > 0){
+      this.setState({storyIndex: this.state.storyIndex - 1})
+    } else {
+      this.setState({storyIndex: 0, showStory: false})
+    }
+  }
   render(){
     return (
-      <View style={[styles.container]}>
+      !this.state.showStory ?
+        <View style={[styles.container]}>
       <View style={[styles.viewHeader]}>
         <Text style={styles.viewHeaderText}>Stories</Text>
       </View>
       <View style={[styles.bodyContainer]}>
         <FlatList
           data={this.state.data}
-          renderItem={({ item }) => (
+          renderItem={({ item, index }) => (
             <View style={{paddingTop: 30, paddingBottom: 20, alignItems: 'center'}}>
               <View style={{flexDirection: "row", justifyContent: 'center', paddingBottom: 30}}>
                 <Image source={{uri: item.image1}} style={{width: 150, height: 150, resizeMode: Image.resizeMode.contain}}>
@@ -53,7 +194,9 @@ export default class Stories extends Component {
                   borderRadius: 6,
                   justifyContent: 'center',
                   alignItems: 'center',
-                  backgroundColor: 'purple'}}>
+                  backgroundColor: 'purple'}}
+                  onPress={() => {this.setState({menuIndex : index, showStory: true})}}
+                  >
                 <Text style={{color: 'white', fontWeight: "bold"}}>LEARN MORE</Text>
               </TouchableOpacity>
 
@@ -63,8 +206,7 @@ export default class Stories extends Component {
           keyExtractor={item => item.id}
         />
         </View>
-
-      </View>
+      </View> : <Story story={this.state.data[this.state.menuIndex].storyData} next={this.next.bind(this)} back={this.back.bind(this)} index={this.state.storyIndex} menuIndex={this.state.menuIndex}/>
     )
   }
 }
