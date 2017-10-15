@@ -11,6 +11,8 @@ import HowIFeel from './src/views/HowIFeel'
 import {Home} from './src/views/Home'
 import Stories from './src/views/Stories'
 import PainPoints from './src/components/PainPoints'
+import Progress from './src/components/Progress'
+import Scoreboard from './src/components/Scoreboard'
 
 export default class App extends Component<{}> {
   constructor(props){
