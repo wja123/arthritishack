@@ -12,8 +12,7 @@ export default class Resources extends Component {
     super(props);
     this.state = {
       selectedIndex: 0,
-      visibility0: true,
-      visibility1: false,
+      visibility: true,
       data : [
         {
           id: 1,
@@ -38,23 +37,10 @@ export default class Resources extends Component {
 
   handleIndexChange = (index) => {
     this.setState({
-      ...this.state,
-      selectedIndex: index
+      visibility: !this.state.visibility
     });
   }
 
-  switchVisibility = (index) => {
-    switch (index) {
-        case 0:
-            this.setState({visibility0: true, visibility1: false});
-            break;
-        case 1:
-            this.setState({visibility0: false, visibility1: true});
-            break;
-        default:
-            break;
-    }
-  }
   linksFlatlist(){
     return (
       <FlatList
@@ -88,7 +74,7 @@ export default class Resources extends Component {
       <Text style={{marginTop: 40, fontWeight: "bold", fontSize: 20}}>What is a Medicine?</Text>
       <YTViewer
         videoId="9OK6_OdWxTA"
-        play={true}
+        play={false}
         loop={true}
 
         onError={e => this.setState({ error: e.error })}
@@ -146,7 +132,7 @@ export default class Resources extends Component {
       <View style={[styles.container]}>
       <View style={[styles.viewHeader, {flexDirection: 'row-reverse', backgroundColor: 'orange'}]}>
         <View style={{width: '20%'}}></View>
-        <View style={{width: '60%', height: '100%', justifyContent: 'center',alignItems:'center'}}>
+        <View style={{width: '60%', height: '100%', justifyContent: 'center', alignItems:'center'}}>
           <Text style={styles.viewHeaderText}>Resources</Text>
         </View>
         <View style={{width: '20%'}}>
@@ -156,14 +142,25 @@ export default class Resources extends Component {
         </View>
       </View>
 
-      <SegmentedControlTab
-      values={['Links', 'Videos']}
-      selectedIndex={this.state.selectedIndex}
-      onTabPress={this.handleIndexChange, this.switchVisibility}>
-      </SegmentedControlTab>
+      <View style={{backgroundColor: 'white', flexDirection: 'row', width: '100%', height: 30}}>
+        <TouchableOpacity onPress={this.handleIndexChange.bind(this)} style={{width: '50%', height:'100%', justifyContent: 'center', alignItems: 'center', borderWidth: 1, borderColor: 'lightgrey', backgroundColor: this.state.visibility ? 'lightblue': 'lightgrey'}}>
+          <View style={{width: '50%', height:'100%', justifyContent: 'center', alignItems: 'center'}}>
+            <Text>
+              Links
+            </Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={this.handleIndexChange.bind(this)} style={{width: '50%', height:'100%', justifyContent: 'center', alignItems: 'center', borderWidth: 1, borderColor: 'lightgrey', backgroundColor: !this.state.visibility? 'lightblue': 'lightgrey'}}>
+          <View style={{width: '50%', height:'100%', justifyContent: 'center', alignItems: 'center'}}>
+            <Text>
+              Videos
+            </Text>
+          </View>
+        </TouchableOpacity>
+      </View>
 
       <View style={[styles.bodyContainer, {backgroundColor: 'orange'}]}>
-        {this.state.visibility0 ?  this.linksFlatlist() : this.videoPage()}
+        {this.state.visibility ?  this.linksFlatlist() : this.videoPage()}
         </View>
 
       </View>
