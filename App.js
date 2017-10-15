@@ -11,7 +11,7 @@ import HowIFeel from './src/views/HowIFeel'
 import {Home} from './src/views/Home'
 import Stories from './src/views/Stories'
 import PainPoints from './src/components/PainPoints'
-import {Progress} from './src/components/Progress'
+import Progress from './src/views/Progress'
 import Scoreboard from './src/views/Scoreboard'
 import Resources from './src/views/Resources'
 
