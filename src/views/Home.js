@@ -20,7 +20,7 @@ const menuItems = [{name: 'STORY TIME', image: 'https://raw.githubusercontent.co
 export const Home = (props) => {
 
     return (
-      <View style={[styles.container, {backgroundColor: 'lightblue', justifyContent: 'center'}]}>
+      <View style={[styles.container, {backgroundColor: 'orange', justifyContent: 'center'}]}>
         {
               <FlatList style={{width:'100%'}} data={menuItems}
                 renderItem={({item, index}) => (
