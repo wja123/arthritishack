@@ -8,15 +8,15 @@ import {
 } from 'react-native';
 import {styles} from '../styles/styles'
 
-const menuItems = ['GAMES', 'HOW I FEEL', 'VIDEOS', 'STORY TIME'];
+const menuItems = ['STORY TIME', 'SCOREBOARD', 'HOW DO I FEEL', 'TRACKING & MONITORING', 'RESOURCES'];
 
-export default class App extends Component<{}> {
-  render() {
+export const Home = (props) => {
+
     return (
       <View style={styles.container}>
         {
           menuItems.map(x => (
-            <TouchableOpacity key={x} style={styles.buttonContainer}>
+            <TouchableOpacity key={x} style={styles.buttonContainer} onPress={() => { props.navView(x)}}>
               <View style={styles.buttonInner}>
                 <Text style={styles.buttonText}>
                   {x}
@@ -27,5 +27,5 @@ export default class App extends Component<{}> {
         }
       </View>
     );
-  }
+
 }
