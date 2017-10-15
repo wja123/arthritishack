@@ -43,7 +43,11 @@ export default class App extends Component<{}> {
           return <Home navView={this.navView.bind(this)}/>
       }
     }
-  render() {
-    return this.viewRender(this.state.view)
-  }
+    render() {
+      return <PainPoints />
+    }
 }
+
+// render() {
+//   return this.viewRender(this.state.view)
+// }
