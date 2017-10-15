@@ -37,7 +37,7 @@ export default class Resources extends Component {
         style={{
           height: 1,
           width: "100%",
-          backgroundColor: "#CED0CE",
+          backgroundColor: "black",
         }}
       />
     );
@@ -46,7 +46,7 @@ export default class Resources extends Component {
   render(){
     return (
       <View style={[styles.container]}>
-      <View style={[styles.viewHeader, {flexDirection: 'row-reverse'}]}>
+      <View style={[styles.viewHeader, {flexDirection: 'row-reverse', backgroundColor: 'orange'}]}>
         <View style={{width: '20%'}}></View>
         <View style={{width: '60%', height: '100%', justifyContent: 'center',alignItems:'center'}}>
           <Text style={styles.viewHeaderText}>Resources</Text>
@@ -57,7 +57,7 @@ export default class Resources extends Component {
           </TouchableOpacity>
         </View>
       </View>
-      <View style={[styles.bodyContainer]}>
+      <View style={[styles.bodyContainer, {backgroundColor: 'orange'}]}>
         <FlatList
           data={this.state.data}
           renderItem={({ item, index }) => (
@@ -69,9 +69,9 @@ export default class Resources extends Component {
                     borderRadius: 6,
                     justifyContent: 'center',
                     alignItems: 'center',
-                    backgroundColor: 'purple'}}
+                    backgroundColor: 'white'}}
                     >
-                  <Text style={{color: 'white', fontWeight: "bold"}}>{item.title}</Text>
+                  <Text style={{color: 'black', fontWeight: "bold"}}>{item.title}</Text>
                 </TouchableOpacity>
               </View>
             </View>
