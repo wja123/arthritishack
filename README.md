@@ -5,7 +5,7 @@ An app that improves communication between parents and children with Juvenile Id
 - Osman Hafeez
 - Yeliz Ali
 - Kashif Pirzada
-- Karim Mithani
+- [Karim Mithani](https://github.com/kmithani)
 - Sana Hanif
 - [William Alagaratnam](https://github.com/wja123)
 - [Ian Duke](https://github.com/1andee)
