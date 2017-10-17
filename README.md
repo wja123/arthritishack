@@ -2,13 +2,13 @@
 An app that improves communication between parents and children with Juvenile Idiopathic Arthritis ("JIA"), and provides a platform to help children overcome physical and psychological challenges associated with JIA.
 
 ## Contributors
--Osman Hafeez
--Yeliz Ali
--Kashif Pirzada
--Karim Mithani
--Sana Hanif
--[William Alagaratnam](https://github.com/wja123)
--[Ian Duke](https://github.com/1andee)
+- Osman Hafeez
+- Yeliz Ali
+- Kashif Pirzada
+- Karim Mithani
+- Sana Hanif
+- [William Alagaratnam](https://github.com/wja123)
+- [Ian Duke](https://github.com/1andee)
 
 ## About Juvenile Idiopathic Arthritis
 Every 3 out of 1000 children in Canada suffer from JIA. Children with JIA often cannot understand why they are feeling a certain way or articulate symptoms to their parents and physicians. Moreover, their treatment is largely dependent on the information provided by the parents, instead of coming first hand from the patients. Additionally, parents have difficulty educating their kids on JIA, thereby making their treatment even more challenging. Children with JIA also suffer from depression, isolation, loss of vision among many other problems leading to immense emotional issues. Due to these problems, parents with children suffering from JIA are reported to experience work loss 2.78x more than their counterparts.
